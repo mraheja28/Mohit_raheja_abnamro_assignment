@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "5bfb6532-d2ae-4c8a-ad18-8a6aeed5297c",
+		"name": "abn-recipe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list-all-recipe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/list-all-recipe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"list-all-recipe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-recipe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Carne Asada\",\r\n        \"description\": \"This easy carne asada recipe is as simple as can be—fire up the grill and you’ll be feasting on juicy carne asada tacos in no time.\",\r\n        \"cookTime\": 10,\r\n        \"servings\": 8,\r\n        \"vegetarian\": true,\r\n        \"ingredients\": [\r\n            {\r\n                \"id\": 10,\r\n                \"recipeId\": 2,\r\n                \"description\": \"garlic powder\",\r\n                \"amount\": \"2\",\r\n                \"measurementUnit\": {\r\n                    \"id\": 2,\r\n                    \"description\": \"tsp\"\r\n                }\r\n            },\r\n            {\r\n                \"id\": 9,\r\n                \"recipeId\": 2,\r\n                \"description\": \"salmon, cut into 4 pieces\",\r\n                \"amount\": \"11/4\",\r\n                \"measurementUnit\": {\r\n                    \"id\": 7,\r\n                    \"description\": \"pounds\"\r\n                }\r\n            },\r\n            {\r\n                \"id\": 11,\r\n                \"recipeId\": 2,\r\n                \"description\": \"limes juiced\",\r\n                \"amount\": \"1/4\",\r\n                \"measurementUnit\": {\r\n                    \"id\": 4,\r\n                    \"description\": \"cup\"\r\n                }\r\n            },\r\n            {\r\n                \"id\": 12,\r\n                \"recipeId\": 2,\r\n                \"description\": \"garlic cloves, minced\",\r\n                \"amount\": \"2\",\r\n                \"measurementUnit\": {\r\n                    \"id\": 4,\r\n                    \"description\": \"tbsp\"\r\n                }\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/add-recipe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"add-recipe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove-recipe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/remove-recipe?recipe-id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"remove-recipe"
+					],
+					"query": [
+						{
+							"key": "recipe-id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-recipe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"recipeId\": 2,\r\n        \"name\": \"Mohit Raheja\",\r\n        \"description\": \"This easy carne asada recipe is as simple as can be—fire up the grill and you’ll be feasting on juicy carne asada tacos in no time.\",\r\n        \"cookTime\": 10,\r\n        \"servings\": 8,\r\n        \"vegetarian\": true,\r\n        \"ingredients\": [\r\n            {\r\n                \"id\": 11,\r\n                \"recipeId\": 2,\r\n                \"description\": \"lemon, thinly sliced\",\r\n                \"amount\": \"2\",\r\n                \"measurementUnit\": {\r\n                    \"id\": 1,\r\n                    \"description\": \"\"\r\n                }\r\n            },\r\n            {\r\n                \"id\": 19,\r\n                \"recipeId\": 2,\r\n                \"description\": \"salmon, cut into 4 pieces\",\r\n                \"amount\": \"11/4\",\r\n                \"measurementUnit\": {\r\n                    \"id\": 7,\r\n                    \"description\": \"pounds\"\r\n                }\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/update-recipe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"update-recipe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find-recipe-by-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/find-recipe-by-vegetarian?vegetarian=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"find-recipe-by-vegetarian"
+					],
+					"query": [
+						{
+							"key": "vegetarian",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe-not-containing-ingredients",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[ \r\n            {\r\n                \"id\": 11,\r\n                \"recipeId\": 1,\r\n                \"description\": \"garlic powder\",\r\n                \"amount\": \"3\",\r\n                \"measurementUnit\": {\r\n                    \"id\": 1,\r\n                    \"description\": \"\"\r\n                }\r\n            }\r\n        \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/recipe-not-containing-ingredients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"recipe-not-containing-ingredients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe-containing-ingredients",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[ \r\n            {\r\n                \"id\": 11,\r\n                \"recipeId\": 1,\r\n                \"description\": \"garlic powder\",\r\n                \"amount\": \"3\",\r\n                \"measurementUnit\": {\r\n                    \"id\": 1,\r\n                    \"description\": \"\"\r\n                }\r\n            }\r\n        \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/recipe-containing-ingredients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"recipe-containing-ingredients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new-ingredient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n                \"recipeId\": 2,\r\n                \"description\": \"test data\",\r\n                \"amount\": \"1\",\r\n                \"measurementUnit\": {\r\n                    \"id\": 2,\r\n                    \"description\": \"tsp\"\r\n                }\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/new-ingredient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"new-ingredient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove-ingredient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/remove-ingredient?id=12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"remove-ingredient"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find-recipe-by-instruction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/find-recipe-by-instruction?search-text=jazzed up with some punchy ingredients&=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"find-recipe-by-instruction"
+					],
+					"query": [
+						{
+							"key": "search-text",
+							"value": "jazzed up with some punchy ingredients"
+						},
+						{
+							"key": null,
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
